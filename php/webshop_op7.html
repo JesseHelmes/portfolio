@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>shop</title>
+    <!--zorgt er voor dat je alleen jaar kunt zien op de form maar niet op de date picker-->
+    <style>
+        input::-webkit-datetime-edit-month-field,
+        ::-webkit-datetime-edit-day-field,
+        ::-webkit-datetime-edit-text{
+            display:none;
+        }
+        input[type=date]{
+
+        }
+        p,input{
+            margin: 1px;
+        }
+
+    </style>
+</head>
+<body>
+<form action="MySqlOpdracht7.php" method="post">
+
+    <p>Jouw naam:
+        <input type="text" name="name"></p>
+
+    <p>Geboortejaar:
+        <input type="date" name="geboortejaar"></p>
+
+    <h1>Bestelling:</h1>
+
+    <p>Naam van het spel:
+        <input type="text" name="game"></p>
+
+    <p>Aantal:
+        <input type="number" name="aantal" min="0"></p>
+
+    <p>Prijs per stuk:
+        <input type="number" name="prijs" min="1"></p>
+
+    <p>Leeftijdscatergorie:
+        <select name="leeftijd">
+            <option value="AlleLeeftijden">Alle leeftijden</option>
+            <option value="+12">+12 jaar</option>
+            <option value="+14">+14 jaar</option>
+            <option value="+18">+18 jaar</option>
+        </select></p>
+
+    <input type="submit" value="Kopen!">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CEE10DA7-FB02-449C-B702-DA917FB3C630}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Eindopdracht_periode_4_museum_applicatie</RootNamespace>
+    <AssemblyName>Eindopdracht_periode_4_museum_applicatie</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainMenu.Designer.cs">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderStrip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HeaderStrip.Designer.cs">
+      <DependentUpon>HeaderStrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainMenu.resx">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeaderStrip.resx">
+      <DependentUpon>HeaderStrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Joconde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\42153436-ea55-468b-98ff-1c184bcf2f49.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13-The-Bedroom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fine-art-finger-paintings-by-iris-scott-5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\346262_wco.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\art-3580932_960_720.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archeologie-wilhelminaplein.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Speerpunten-uit-de-vroege-middeleeuwen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20080626 Diverse objecten opgraving Ezinge D300-02047.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\juwelen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knipsel.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\37318771_991118187735864_7398648575489474560_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starry_night.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nicolaes_maes_peeling_apples.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\29307056848_21276b6c43_b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Faberge-1896-Castles-egg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gallery-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ifugao_sculpture_Louvre_70-1999-4-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_5753_polarr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\26039052357_fd31955a69_b.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
