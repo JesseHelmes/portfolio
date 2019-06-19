@@ -1,0 +1,10 @@
+C:\Users\jesse\Documents\school graafschapcollege\C#\deel 4\NatSim2\NatSim\obj\Debug\NatSim2.csprojAssemblyReference.cache
+C:\Users\jesse\Documents\school graafschapcollege\C#\deel 4\NatSim2\NatSim\obj\Debug\NatSim2.FrmNatSim2.resources
+C:\Users\jesse\Documents\school graafschapcollege\C#\deel 4\NatSim2\NatSim\obj\Debug\NatSim2.Properties.Resources.resources
+C:\Users\jesse\Documents\school graafschapcollege\C#\deel 4\NatSim2\NatSim\obj\Debug\NatSim2.csproj.GenerateResource.cache
+C:\Users\jesse\Documents\school graafschapcollege\C#\deel 4\NatSim2\NatSim\obj\Debug\NatSim2.csproj.CoreCompileInputs.cache
+C:\Users\jesse\Documents\school graafschapcollege\C#\deel 4\NatSim2\NatSim\bin\Debug\NatSim2.exe.config
+C:\Users\jesse\Documents\school graafschapcollege\C#\deel 4\NatSim2\NatSim\bin\Debug\NatSim2.exe
+C:\Users\jesse\Documents\school graafschapcollege\C#\deel 4\NatSim2\NatSim\bin\Debug\NatSim2.pdb
+C:\Users\jesse\Documents\school graafschapcollege\C#\deel 4\NatSim2\NatSim\obj\Debug\NatSim2.exe
+C:\Users\jesse\Documents\school graafschapcollege\C#\deel 4\NatSim2\NatSim\obj\Debug\NatSim2.pdb
