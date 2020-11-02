@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+      var input = prompt("voer een zin in", 'zin');
+      var zin = "uw tekst: " + input + '<br>De eeste spatie staat op positie: ' + (input.indexOf(' ') + 1);
+  </script>
+</head>
+<body>
+<h1 id='zin'></h1>
+
+<script>
+    document.getElementById('zin').innerHTML = zin;
+</script>
+</body>
+</html>

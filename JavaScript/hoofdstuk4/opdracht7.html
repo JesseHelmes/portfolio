@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+      var namen = ['jesse', 'mama', 'papa', 'misty', 'wesley'];
+      var naam = 'spongebob';
+
+      function countArrayLength(){
+        var count = namen.length;
+        document.getElementById('uitkomst').innerHTML = count;
+      }
+
+      function writeArray(){
+        document.getElementById('someNames').innerHTML = namen[0] + " " + namen[2] + " " + namen[4];
+      }
+
+      function abcArray(){
+        document.getElementById('abc').innerHTML = namen.sort();
+      }
+
+      function addToArray(){
+        var newName = prompt("voer extra naam in", 'bob');
+        var names = [...namen];
+        names.push(newName);
+        document.getElementById('add').innerHTML = names;
+      }
+
+      function addStringToArray(naam){
+        var names = [...namen];
+        names.push(naam);
+        document.getElementById('addString').innerHTML = names;
+      }
+    </script>
+</head>
+<body>
+<p id="uitkomst">opdracht 7</p>
+<p id="someNames">opdracht 7</p>
+<p id="abc">opdracht 7</p>
+<p id="add">opdracht 7</p>
+<p id="addString">opdracht 7</p>
+<script>
+    countArrayLength();
+    writeArray();
+    abcArray();
+    addToArray();
+    addStringToArray(naam)
+</script>
+</body>
+</html>

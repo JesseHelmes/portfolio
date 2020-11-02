@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    var pensioen = 68;
+    var uitkomst = "";
+    var leeftijd = prompt("Voer uw leeftijd in");
+
+    jaarTeGaan = pensioen - leeftijd;
+
+    if(jaarTeGaan <= 0){
+      uitkomst = "Je kunt al met pensioen gaan";
+    }else{
+      uitkomst = "Over " + jaarTeGaan + ' jaar kun je met pensioen';
+    }
+  </script>
+</head>
+<body>
+  <h1 id="title">Jaren werk tot pensioen</h1>
+  <p id="uitkomst"></p>
+
+  <script>
+    document.getElementById('uitkomst').innerHTML = uitkomst;
+</script>
+</body>
+</html>

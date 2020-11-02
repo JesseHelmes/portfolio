@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- local -->
+    <script src="../jquery-3.5.1.min.js"></script>
+    <!-- CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function(){
+        x = $('#x');
+        y = $('#y');
+        $(document).on('mousemove', function(){
+          x.text(event.pageX);
+          y.text(event.pageY);
+        });
+        });
+  </script>
+</head>
+<body>
+  <p>Mouse X-as: <span id="x"></span></p>
+  <p>Mouse Y-as: <span id="y"></span></p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+      var getal1 = parseFloat(prompt("voer eerste getal in", '1').replace(",", "."));
+      var getal2 = parseFloat(prompt("voer tweede getal in", '2').replace(",", "."));
+      var groterKleiner = (getal1 > getal2) ? 'groter dan ' : (getal1 === getal2) ? 'gelijk aan ' : 'kleiner dan ';
+      var uitkomst;
+      uitkomst = getal1 + " is " + groterKleiner + getal2;
+    </script>
+</head>
+<body>
+  <h1>Getallen vergelijken</h1>
+  <p id="input"></p>
+  <hr>
+<p id="uitkomst">uitkomst</p>
+<script>
+  document.getElementById('input').innerHTML = "De getallen die u invoerde waren " + getal1 + " en " + getal2;
+  document.getElementById('uitkomst').innerHTML = uitkomst;
+</script>
+</body>
+</html>

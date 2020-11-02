@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+
+    </script>
+</head>
+<body>
+<p id="uitkomst">opdracht 3</p>
+<h2>toon naam in alert()</h2>
+<input type="text" id="name" value="" placeholder="Wat is uw naam?">
+<button id="clickME">Toon naam</button>
+<script>
+    document.getElementById('clickME').onclick = function(){
+        var name = document.getElementById('name').value;
+        var msg;
+        if(name.length <= 2){
+            msg = "U moet een naam invullen";
+        }else{
+            msg = "Welkom " + name;
+        }
+        alert(msg);
+      }
+</script>
+</body>
+</html>

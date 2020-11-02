@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- local -->
+    <script src="../jquery-3.5.1.min.js"></script>
+    <!-- CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function(){
+            $('#pressME').on('click', function(){
+                var input = $('#input').val();
+                $('#mijnLijst').append('<li class="' + input + '">' + input + ' <a href="#">verwijderen</a></li>');
+                $('#input').val('');
+            });
+
+            $('#mijnLijst').on('click', 'li a' ,function(){
+                $(this).first().parent().remove();
+            });
+
+            $('#removeOLD').on('click', function(){
+                $('#mijnLijst li').first().remove();
+            });
+        });
+  </script>
+</head>
+<body>
+    <h2>Boodschappenlijst</h2>
+    <div>
+        <p>Welke item toevoegen???
+            <input id="input" type="text">
+            <button id="pressME">Toevoegen</button>
+            <button id="removeOLD">Verwijder oudste item</button>
+        </p>
+        <ul id="mijnLijst">
+
+        </ul>
+    </div>
+</body>
+</html>

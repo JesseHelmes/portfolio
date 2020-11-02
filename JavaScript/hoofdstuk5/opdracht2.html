@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+      var muzikanten = 0, uitkomst;
+        if(muzikanten == 0){
+          uitkomst = 'Geen groep';
+        }
+        else if(muzikanten == 1){
+          uitkomst = 'solo';
+        }
+
+        else if(muzikanten == 2){
+          uitkomst = 'duet';
+        }
+        else if(muzikanten == 3){
+          uitkomst = 'trio';
+        }
+        else if(muzikanten == 4){
+          uitkomst = 'quartet';
+        }
+        else if(muzikanten <4){
+          uitkomst = 'Dit is een grote groep';
+        }
+      console.log(uitkomst);
+    </script>
+</head>
+<body>
+<p id="uitkomst">opdracht 2</p>
+<script>
+    document.getElementById('uitkomst').innerHTML = uitkomst;
+</script>
+</body>
+</html>
