@@ -7,19 +7,19 @@
   <h1 id="title">Spaaroverzicht</h1>
   <p id="content"></p>
   <script>
-    var prijs = 2000, spaard = 200, jaar = 12, gespaard = 0;
+	var prijs = 2000, spaard = 200, jaar = 12, gespaard = 0;
 
-    for(i = 1; i <= jaar; i++){
-      gespaard += spaard;
+	for(i = 1; i <= jaar; i++){
+	  gespaard += spaard;
 
-      zin = gespaard + " Euro is er gespaard in maand " + i;
+	  zin = gespaard + " Euro is er gespaard in maand " + i;
 
-      if(gespaard >= prijs){
-        zin += " je kan nu een macbook aanschaffen!";
-      }
+	  if(gespaard >= prijs){
+		zin += " je kan nu een macbook aanschaffen!";
+	  }
 
-      document.getElementById('content').innerHTML +='<p>' + zin + '</p>';
-    }
+	  document.getElementById('content').innerHTML +='<p>' + zin + '</p>';
+	}
   </script>
 </body>
 </html>

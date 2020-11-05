@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
+	<script>
 
-        function sendText(){
-            //1 maak new element
-            var newElement = document.createElement('P');
+		function sendText(){
+			//1 maak new element
+			var newElement = document.createElement('P');
 
-            //2 maak new textnode op basis van text in textveld
-            var node = document.getElementById('inputText').value;
-            var newNode = document.createTextNode(node);
+			//2 maak new textnode op basis van text in textveld
+			var node = document.getElementById('inputText').value;
+			var newNode = document.createTextNode(node);
 
-            //3 voeg de text toe aan het new element
-            newElement.appendChild(newNode);
+			//3 voeg de text toe aan het new element
+			newElement.appendChild(newNode);
 
-             //4 toon in pagina
-            var uitput = document.getElementById('divResult');
-            uitput.appendChild(newElement);
-        }
+			 //4 toon in pagina
+			var uitput = document.getElementById('divResult');
+			uitput.appendChild(newElement);
+		}
 
-        function removeText(){
-            var uitput = document.getElementById('divResult');
-            uitput.innerHTML = "";
-        }
-    </script>
+		function removeText(){
+			var uitput = document.getElementById('divResult');
+			uitput.innerHTML = "";
+		}
+	</script>
 </head>
 <body>
 <p id="uitkomst">opdracht 1</p>
@@ -32,13 +32,13 @@
 <button id="remove">remove text</button>
 <div id="divResult"></div>
 <script>
-    document.getElementById('pressMe').onclick = function(){
-        sendText();
-    }
+	document.getElementById('pressMe').onclick = function(){
+		sendText();
+	}
 
-    document.getElementById('remove').onclick = function(){
-        removeText();
-    }
+	document.getElementById('remove').onclick = function(){
+		removeText();
+	}
 </script>
 </body>
 </html>

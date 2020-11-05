@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- local -->
-    <script src="../jquery-3.5.1.min.js"></script>
-    <!-- CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-      $(document).ready(function(){
-            $('#pressBLUE').on('click', function(){
-                removeAllClasses();
-                $('p').first().addClass('blue');
-            });
+<!-- local -->
+<script src="../jquery-3.5.1.min.js"></script>
+<!-- CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#pressBLUE').on('click', function(){
+			removeAllClasses();
+			$('p').first().addClass('blue');
+		});
 
-            $('#pressGREEN').on('click', function(){
-                removeAllClasses();
-                $('p').first().addClass('green');
-            });
+		$('#pressGREEN').on('click', function(){
+			removeAllClasses();
+			$('p').first().addClass('green');
+		});
 
-            $('#pressRED').on('click', function(){
-                removeAllClasses();
-                $('p').first().addClass('red');
-            });
+		$('#pressRED').on('click', function(){
+			removeAllClasses();
+			$('p').first().addClass('red');
+		});
 
-            function removeAllClasses(){
-                $('p').first().removeClass('blue');
-                $('p').first().removeClass('green');
-                $('p').first().removeClass('red');
-            }
-        });
-  </script>
-  <style>
-      .blue{
-          background: blue;
-      }
-      .green{
-          background: lightgreen;
-      }
-      .red{
-          background: red;
-      }
-  </style>
+		function removeAllClasses(){
+			$('p').first().removeClass('blue');
+			$('p').first().removeClass('green');
+			$('p').first().removeClass('red');
+		}
+	});
+</script>
+<style>
+	.blue{
+		background: blue;
+		}
+	.green{
+		background: lightgreen;
+	}
+	.red{
+		background: red;
+	}
+</style>
 </head>
 <body>
-    <div>
-        <p>BLAUW! RED! GREEN! RBG!!!!</p>
-        <p>
-            <button id="pressBLUE">blauw</button>
-            <button id="pressGREEN">groen</button>
-            <button id="pressRED">rood</button>
-        </p>
-    </div>
+	<div>
+		<p>BLAUW! RED! GREEN! RBG!!!!</p>
+		<p>
+			<button id="pressBLUE">blauw</button>
+			<button id="pressGREEN">groen</button>
+			<button id="pressRED">rood</button>
+		</p>
+	</div>
 </body>
 </html>

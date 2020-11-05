@@ -1,3 +1,3 @@
 function showVersion(){
-    document.getElementById('message').innerHTML = navigator.appVersion;
+	document.getElementById('message').innerHTML = navigator.appVersion;
 }

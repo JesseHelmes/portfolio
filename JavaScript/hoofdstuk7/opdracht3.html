@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        .special{
-            color: black;
-        }
-    </style>
-    <script>
+	<style>
+		.special{
+			color: black;
+		}
+	</style>
+	<script>
 
-        function sendText(){
-            //1 zoek alinea
-            var alineas = document.querySelectorAll('.special');
-            var alineasCount = alineas.length;
+		function sendText(){
+			//1 zoek alinea
+			var alineas = document.querySelectorAll('.special');
+			var alineasCount = alineas.length;
 
-            //2 vervan de alinea; eerst new alinea maken
-            var node = document.getElementById('inputText').value;
+			//2 vervan de alinea; eerst new alinea maken
+			var node = document.getElementById('inputText').value;
 
-            for(var i = 0; i < alineasCount; i++){
-                alineas[i].textContent = node;
-            }
-        }
-    </script>
+			for(var i = 0; i < alineasCount; i++){
+				alineas[i].textContent = node;
+			}
+		}
+	</script>
 </head>
 <body>
 <p id="uitkomst">opdracht 3</p>
 <input id="inputText" type="text">
 <button id="pressMe">press me please</button>
 <div id="divResult">
-    <div class="special">eeeeeeeeffghfg</div>
-    <div>boboboboboobboobobb</div>
-    <div class="special">sdfdhiolij6846f51g35df4g1</div>
-    <div>bobobobofgdfgfgboobboobobb</div>
-    <div>bobfdfgdfgdfgoboboboobboobobb</div>
-    <div class="special">pizza</div>
+	<div class="special">eeeeeeeeffghfg</div>
+	<div>boboboboboobboobobb</div>
+	<div class="special">sdfdhiolij6846f51g35df4g1</div>
+	<div>bobobobofgdfgfgboobboobobb</div>
+	<div>bobfdfgdfgdfgoboboboobboobobb</div>
+	<div class="special">pizza</div>
 </div>
 <script>
-    document.getElementById('pressMe').onclick = function(){
-        sendText();
-    }
+	document.getElementById('pressMe').onclick = function(){
+		sendText();
+	}
 </script>
 </body>
 </html>

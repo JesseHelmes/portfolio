@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
-        let bier = ['grolsch', 'hertog jan', 'palm', 'brand', 'hoegaarden'];
-        let whiskey = ['glenlevit', 'dalmore', 'jura', 'jameson', 'makers'];
-        function boodschap(){
-            var page = document.getElementById('uitkomst');
-            bier = caps(bier);
-            whiskey = caps(whiskey);
-            console.log(bier);
-            console.log(whiskey);
-            page.innerHTML = bier + "<br>" + whiskey;
-        }
+	<script>
+	  let bier = ['grolsch', 'hertog jan', 'palm', 'brand', 'hoegaarden'];
+	  let whiskey = ['glenlevit', 'dalmore', 'jura', 'jameson', 'makers'];
+	  function boodschap(){
+		var page = document.getElementById('uitkomst');
+		bier = caps(bier);
+		whiskey = caps(whiskey);
+		console.log(bier);
+		console.log(whiskey);
+		page.innerHTML = bier + "<br>" + whiskey;
+	  }
 
-        function caps(toUpper){
-            var i = 0;
-            var replacer = [];
-            toUpper.forEach(function(){
-                replacer.push(toUpper[i].toUpperCase());
-                i++;
-            });
-            return replacer;
-        }
+	  function caps(toUpper){
+		var i = 0;
+		var replacer = [];
+		toUpper.forEach(function(){
+		    replacer.push(toUpper[i].toUpperCase());
+		    i++;
+		});
+		return replacer;
+	  }
     </script>
 </head>
 <body>

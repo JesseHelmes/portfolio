@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- local -->
-    <script src="../jquery-3.5.1.min.js"></script>
-    <!-- CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-      $(document).ready(function(){
+<!-- local -->
+<script src="../jquery-3.5.1.min.js"></script>
+<!-- CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
 //#A487BE
-            $('#pressMe').on('click', function(){
-                var input = $('#input').val();
-                var chosen = $('input[type=radio]:checked').val();
-                var blok = $('#customBlok');
+		$('#pressMe').on('click', function(){
+			var input = $('#input').val();
+			var chosen = $('input[type=radio]:checked').val();
+			var blok = $('#customBlok');
 
-                if(chosen == 'text'){
-                    blok.html(input);
-                }
-                else{
-                    blok.css(
-                        chosen, input
-                    );
-                }
+			if(chosen == 'text'){
+				blok.html(input);
+			}
+			else{
+				blok.css(
+					chosen, input
+				);
+			}
 
-                //alert(chosen + input);
-            });
+			//alert(chosen + input);
+		});
 
-            $('#input').on('focus', function(){
-                $('#input').val('');
-            });
-        });
-  </script>
+		$('#input').on('focus', function(){
+			$('#input').val('');
+		});
+	});
+</script>
 </head>
 <body>
-    <div>
-        <h3>
-            <input type="radio" name="choose" value="color"/>Voorgrond
-            <input type="radio" name="choose" value="background"/>Achtergrond
-            <input type="radio" name="choose" value="text"/>Text
-            <input type="radio" name="choose" value="height"/>Hoogte
-            <input type="radio" name="choose" value="width"/>Breedte
-        </h3>
-        <input id="input" type="text"><button id="pressMe">Stel in</button>
-    </div>
-    <div id="customBlok">
-        Voorbeeld tekst
-    </div>
+	<div>
+		<h3>
+			<input type="radio" name="choose" value="color"/>Voorgrond
+			<input type="radio" name="choose" value="background"/>Achtergrond
+			<input type="radio" name="choose" value="text"/>Text
+			<input type="radio" name="choose" value="height"/>Hoogte
+			<input type="radio" name="choose" value="width"/>Breedte
+		</h3>
+		<input id="input" type="text"><button id="pressMe">Stel in</button>
+	</div>
+	<div id="customBlok">
+		Voorbeeld tekst
+	</div>
 </body>
 </html>

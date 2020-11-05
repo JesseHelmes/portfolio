@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- local -->
-    <script src="../jquery-3.5.1.min.js"></script>
-    <!-- CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- local -->
+	<script src="../jquery-3.5.1.min.js"></script>
+	<!-- CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-      $(document).ready(function(){
-            
-            var x = 5, tabel, index = 1;
-            for(var i = 0; i < x; i++){
-                tabel += '<tr>';
-                for(var u = 0; u < x; u++){
-                    tabel += '<td>cell ' + index + '</td>';
-                    index++;
-                }
-                tabel += '</tr>';
-            }
-            $('#tabel').html(tabel);
+	  $(document).ready(function(){
+			
+			var x = 5, tabel, index = 1;
+			for(var i = 0; i < x; i++){
+				tabel += '<tr>';
+				for(var u = 0; u < x; u++){
+					tabel += '<td>cell ' + index + '</td>';
+					index++;
+				}
+				tabel += '</tr>';
+			}
+			$('#tabel').html(tabel);
 
-            var oneven = $('#tabel tr:odd');
-            var even = $('#tabel tr:even');
-            oneven.css({
-                "background" : "darkGray"
-            });
-            even.css({
-                "background" : "LightGray"
-            });
-        });
+			var oneven = $('#tabel tr:odd');
+			var even = $('#tabel tr:even');
+			oneven.css({
+				"background" : "darkGray"
+			});
+			even.css({
+				"background" : "LightGray"
+			});
+		});
   </script>
 </head>
 <body>
