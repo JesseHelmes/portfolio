@@ -47,5 +47,6 @@ body.dark-mode{
 }
 
 body.dark-mode table, body.dark-mode tr, body.dark-mode td{
+	background: #555;
 	border-color: white;
 }
