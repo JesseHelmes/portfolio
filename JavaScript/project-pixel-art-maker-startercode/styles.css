@@ -50,3 +50,8 @@ body.dark-mode table, body.dark-mode tr, body.dark-mode td{
 	background: #555;
 	border-color: white;
 }
+
+body.dark-mode button{
+	background: grey;
+	color: white;
+}
