@@ -108,11 +108,6 @@ time = (new Date()).getHours();
 if(time >= 18 || url.search("jesse")){
 	darkMode();
 }
-/*
-document.getElementsByClassName('toggle-dark-mode').onclick = function(e){
-	//e.preventDefault();
-	darkMode();
-};*/
 
 //dark mode fijner voor je ogen
 function darkMode(){
