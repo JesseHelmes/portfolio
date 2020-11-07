@@ -27,14 +27,25 @@ table{
 	margin: 0 auto;
 }
 
-tr{
+tr, td{
 	height: 50px;
-}
-
-td{
 	width: 50px;
 }
 
 input[type=number]{
 	width: 6em;
+}
+
+/* DARK MODE SECTION */
+.toggle-dark-mode{
+	float: right;
+}
+
+body.dark-mode{
+	background: black;
+	color: white;
+}
+
+body.dark-mode table, body.dark-mode tr, body.dark-mode td{
+	border-color: white;
 }
