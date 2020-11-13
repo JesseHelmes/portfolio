@@ -1,0 +1,63 @@
+.temperatures{
+	border: 1px solid #1C6EA4;
+	background-color: #EEEEEE;
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+.temperatures tr:nth-child(even){
+	background: #D0E4F5;
+}
+
+@media(min-width: 800px){
+	.temperatures{
+		max-width: 30%;
+	}
+}
+
+.leds{
+	margin-bottom: 10px;
+}
+
+.leds button{
+	margin-right: 10px;
+}
+
+.morse-code{
+	min-height: 40px;
+	min-width: 200px;
+	margin: 0 10px 10px 0;
+}
+
+.divMorse .morse-code, .divMorse .sendMorse{
+	float: left;
+}
+
+/* DARK MODE SECTION */
+.toggle-dark-mode{
+	float: right;
+}
+
+body.dark-mode{
+	background: black;
+	color: white;
+}
+
+body.dark-mode .temperatures{
+	background: grey;
+}
+
+body.dark-mode .temperatures tr:nth-child(even){
+	background: lightsteelblue;
+}
+
+body.dark-mode .morse-code{
+	background: #555;
+	color: white;
+}
+
+body.dark-mode button{
+	background: grey;
+	color: white;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="css/styles.css" rel="stylesheet">
+	<!-- CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="icon" type="image/png" sizes="48x48" href="https://www.raspberrypi.org/homepage-9df4b/favicon.png">
+</head>
+<body>
+
+	<button class="toggle-dark-mode">toggle dark mode</button>
+
+	<p>
+		omgeving: <span class="omgeving">00.0</span> °C
+	<br>
+		CPU: <span class="cpu">00.0</span> °C
+	</p>
+
+	<table class="temperatures">
+		<tr> <th>cpu temperature</th> <th>datum + tijd</th> <th>id</th> </tr>
+	</table>
+
+	<br>
+
+	<div class="leds">
+		color van led status, id van led en led status (on/off)
+	</div>
+
+	<div class="divMorse">
+		<textarea class="morse-code" placeholder="custome input morse">sos</textarea>
+
+		<button class="sendMorse">send morse code</button>
+	</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
