@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
-      var mijnArray = ['beer', 'Aap', 'Dolfijn', 'chihuahua', 'Ezel'];
+	<script>
+		var mijnArray = ['beer', 'Aap', 'Dolfijn', 'chihuahua', 'Ezel'];
 
-      function sum(){
-        document.getElementById('uitkomst1').innerHTML = mijnArray;
-        document.getElementById('uitkomst2').innerHTML = mijnArray.sort();
-        mijnArray.sort(function(a, b){
-          var x = a.toLowerCase();
-          var y = b.toLowerCase();
-          if(x < y){
-            return -1;
-          }
-          if(x > y){
-            return 1;
-          }
-          return 0;
-        });
+		function sum() {
+			document.getElementById('uitkomst1').innerHTML = mijnArray;
+			document.getElementById('uitkomst2').innerHTML = mijnArray.sort();
+			mijnArray.sort(function (a, b) {
+				var x = a.toLowerCase();
+				var y = b.toLowerCase();
+				if (x < y) {
+					return -1;
+				}
+				if (x > y) {
+					return 1;
+				}
+				return 0;
+			});
 
-        document.getElementById('uitkomst3').innerHTML = mijnArray;
-      }
-    </script>
+			document.getElementById('uitkomst3').innerHTML = mijnArray;
+		}
+	</script>
 </head>
 <body>
 <p id="uitkomst1">opdracht 8</p>
 <p id="uitkomst2">opdracht 8</p>
 <p id="uitkomst3">opdracht 8</p>
 <script>
-    sum();
+	sum();
 </script>
 </body>
 </html>

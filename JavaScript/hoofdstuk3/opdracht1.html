@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
-      var getal1 = parseInt(prompt("voer eerste getal in", '1'));
-      var getal2 = parseInt(prompt("voer tweede getal in", '2'));
-      var som;
-      try{
-        som = (getal1 + getal2);
-        if(isNaN(som)){
-            som = "het was NaN dus probeer het nog een keer";
-        }
-        som = "uitkomst = " + som;
-      }
-      catch{
+	<script>
+		var getal1 = parseInt(prompt("voer eerste getal in", '1'));
+		var getal2 = parseInt(prompt("voer tweede getal in", '2'));
+		var som;
+		try {
+			som = (getal1 + getal2);
+			if (isNaN(som)) {
+				som = "het was NaN dus probeer het nog een keer";
+			}
+			som = "uitkomst = " + som;
+		} catch {
 
-      }
+		}
 
-    </script>
+	</script>
 </head>
 <body>
 <p id="uitkomst">opdracht 1</p>
 <script>
-    document.getElementById('uitkomst').innerHTML = som;
+	document.getElementById('uitkomst').innerHTML = som;
 </script>
 </body>
 </html>

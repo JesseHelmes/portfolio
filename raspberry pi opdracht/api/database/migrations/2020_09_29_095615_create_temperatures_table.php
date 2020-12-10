@@ -6,29 +6,29 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateTemperaturesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('temperatures', function (Blueprint $table) {
-            $table->id();
-            $table->double('temperature');
-            $table->timestamp('time');
-            $table->date('date');
-            $table->timestamps();
-        });
-    }
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('temperatures', function (Blueprint $table) {
+			$table->id();
+			$table->double('temperature');
+			$table->timestamp('time');
+			$table->date('date');
+			$table->timestamps();
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('temperatures');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::dropIfExists('temperatures');
+	}
 }

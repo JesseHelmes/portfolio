@@ -2,16 +2,16 @@
 <html>
 <head>
 	<script>
-	  function sum(){
-		var counter;
+		function sum() {
+			var counter;
 
-		for (var i = 0; i < arguments.length; i++) {
-		  counter = (i + 1);
+			for (var i = 0; i < arguments.length; i++) {
+				counter = (i + 1);
+			}
+			counter = (counter == undefined) ? 0 : counter;
+
+			document.getElementById('uitkomst').innerHTML = counter;
 		}
-		counter = (counter == undefined) ? 0 : counter;
-
-		document.getElementById('uitkomst').innerHTML = counter;
-	  }
 	</script>
 </head>
 <body>

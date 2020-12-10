@@ -10,7 +10,8 @@ use App\Models\Temperature;
 class TemperatureController extends Controller
 {
 
-	public function temperature(){
+	public function temperature()
+	{
 
 		//activeerd gpio and therm
 		exec('modprobe w1-gpio');
@@ -38,20 +39,21 @@ class TemperatureController extends Controller
 			$zin = "Unable to get temperature\n";
 		}
 
-		$json = '{"celsius":'.$temp.'}';
+		$json = '{"celsius":' . $temp . '}';
 		//echo $zin;
 		return json_decode($json, true);
 	}
 
-	public function cpu(){
+	public function cpu()
+	{
 		//leest de intern tempratuur van de cpu bestand
-		$f = fopen("/sys/class/thermal/thermal_zone0/temp","r");
+		$f = fopen("/sys/class/thermal/thermal_zone0/temp", "r");
 		$temp = (float)fgets($f);
-		$temp = round($temp/1000, 1);
+		$temp = round($temp / 1000, 1);
 		//echo 'CPU temperature is ' . $temp . "°C";
 		fclose($f);
 
-		$json = '{"celsius":'.$temp.'}';
+		$json = '{"celsius":' . $temp . '}';
 
 		//hier voeg ik de gegevens toe aan de database
 		$arr = array('temperature' => $temp, 'date' => date("Y-m-d"));
@@ -60,19 +62,22 @@ class TemperatureController extends Controller
 		return json_decode($json, true);
 	}
 
-	public function temperatures(){
+	public function temperatures()
+	{
 		//pakt de laaste temperatuur die opgeslagen is als eerst op
 		$temps = Temperature::latest()->get();
 		return response()->json($temps);
 	}
 
 	//persist the new resource
-	public function store($temp){
+	public function store($temp)
+	{
 		$temperature = Temperature::create($temp);
 	}
 
 	//validation
-	protected function validateTemperature(){
+	protected function validateTemperature()
+	{
 		return request()->validate([
 			'temperature' => 'required'
 		]);

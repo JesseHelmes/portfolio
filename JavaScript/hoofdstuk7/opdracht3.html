@@ -2,13 +2,13 @@
 <html>
 <head>
 	<style>
-		.special{
+		.special {
 			color: black;
 		}
 	</style>
 	<script>
 
-		function sendText(){
+		function sendText() {
 			//1 zoek alinea
 			var alineas = document.querySelectorAll('.special');
 			var alineasCount = alineas.length;
@@ -16,7 +16,7 @@
 			//2 vervan de alinea; eerst new alinea maken
 			var node = document.getElementById('inputText').value;
 
-			for(var i = 0; i < alineasCount; i++){
+			for (var i = 0; i < alineasCount; i++) {
 				alineas[i].textContent = node;
 			}
 		}
@@ -35,7 +35,7 @@
 	<div class="special">pizza</div>
 </div>
 <script>
-	document.getElementById('pressMe').onclick = function(){
+	document.getElementById('pressMe').onclick = function () {
 		sendText();
 	}
 </script>

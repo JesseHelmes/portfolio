@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- local -->
-    <script src="../jquery-3.5.1.min.js"></script>
-    <!-- CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-      $(document).ready(function(){
-          $('#clickME').on('click', function(){
-            var color = $('#colorPicker').val();
-            $('body').css('background', color);
-          });
-        });
-  </script>
+	<!-- local -->
+	<script src="../jquery-3.5.1.min.js"></script>
+	<!-- CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#clickME').on('click', function () {
+				var color = $('#colorPicker').val();
+				$('body').css('background', color);
+			});
+		});
+	</script>
 </head>
 <body>
-  <p>
-    <input type="color" id="colorPicker">
-    <button id="clickME">Verander achtergrond</button>
-  </p>
+<p>
+	<input type="color" id="colorPicker">
+	<button id="clickME">Verander achtergrond</button>
+</p>
 </body>
 </html>

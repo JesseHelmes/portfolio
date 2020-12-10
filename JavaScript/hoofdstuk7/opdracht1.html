@@ -3,7 +3,7 @@
 <head>
 	<script>
 
-		function sendText(){
+		function sendText() {
 			//1 maak new element
 			var newElement = document.createElement('P');
 
@@ -14,12 +14,12 @@
 			//3 voeg de text toe aan het new element
 			newElement.appendChild(newNode);
 
-			 //4 toon in pagina
+			//4 toon in pagina
 			var uitput = document.getElementById('divResult');
 			uitput.appendChild(newElement);
 		}
 
-		function removeText(){
+		function removeText() {
 			var uitput = document.getElementById('divResult');
 			uitput.innerHTML = "";
 		}
@@ -32,11 +32,11 @@
 <button id="remove">remove text</button>
 <div id="divResult"></div>
 <script>
-	document.getElementById('pressMe').onclick = function(){
+	document.getElementById('pressMe').onclick = function () {
 		sendText();
 	}
 
-	document.getElementById('remove').onclick = function(){
+	document.getElementById('remove').onclick = function () {
 		removeText();
 	}
 </script>

@@ -11,16 +11,16 @@
 <input type="text" id="name" value="" placeholder="Wat is uw naam?">
 <button id="clickME">Toon naam</button>
 <script>
-	document.getElementById('clickME').onclick = function(){
+	document.getElementById('clickME').onclick = function () {
 		var name = document.getElementById('name').value;
 		var msg;
-		if(name.length <= 2){
+		if (name.length <= 2) {
 			msg = "U moet een naam invullen";
-		}else{
+		} else {
 			msg = "Welkom " + name;
 		}
 		alert(msg);
-	  }
+	}
 </script>
 </body>
 </html>

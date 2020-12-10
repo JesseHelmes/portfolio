@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
-      var getal1 = parseFloat(prompt("voer eerste getal in", '1').replace(",", "."));
-      var getal2 = parseFloat(prompt("voer tweede getal in", '2').replace(",", "."));
-      var som;
-      try{
-        som = (getal1 + getal2).toFixed(2);
-        if(isNaN(som)){
-            som = "het was NaN dus probeer het nog een keer";
-        }
-        som = "uitkomst = " + som;
-      }
-      catch{
+	<script>
+		var getal1 = parseFloat(prompt("voer eerste getal in", '1').replace(",", "."));
+		var getal2 = parseFloat(prompt("voer tweede getal in", '2').replace(",", "."));
+		var som;
+		try {
+			som = (getal1 + getal2).toFixed(2);
+			if (isNaN(som)) {
+				som = "het was NaN dus probeer het nog een keer";
+			}
+			som = "uitkomst = " + som;
+		} catch {
 
-      }
+		}
 
-    </script>
+	</script>
 </head>
 <body>
 <p id="uitkomst">opdracht 2</p>
 <script>
-    document.getElementById('uitkomst').innerHTML = som;
+	document.getElementById('uitkomst').innerHTML = som;
 </script>
 </body>
 </html>

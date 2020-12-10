@@ -2,37 +2,32 @@
 <html>
 <head>
 	<script>
-	  var uitkomst;
-	  let shirtWidth = 23, shirtLength = 30, shirtSleeve = 8.88;
-	  const sWidth = 18, sLength = 28, sSleeve = 8.13;
-	  const mWidth = 20, mLength = 29, mSleeve = 8.38;
-	  const lWidth = 22, lLength = 30, lSleeve = 8.63;
-	  const xlWidth = 24, xlLength = 31, xlSleeve = 8.88;
-	  const xxlWidth = 26, xxlLength = 33, xxlSleeve = 9.63;
-	  const xxxlWidth = 28, xxxlLength = 34, xxxlSleeve = 10.13;
-	  
-	  if(shirtWidth >= sWidth && shirtWidth < mWidth && shirtLength >= sLength && shirtLength < mLength && shirtSleeve >= sSleeve && shirtSleeve < mSleeve){
-		uitkomst = "S";
-	  }
-	  else if(shirtWidth >= mWidth && shirtWidth < lWidth && shirtLength >= mLength && shirtLength < lLength && shirtSleeve >= mSleeve && shirtSleeve < lSleeve){
-		uitkomst = "M";
-	  }
-	  else if(shirtWidth >= lWidth && shirtWidth < xlWidth && shirtLength >= lLength && shirtLength < xlLength && shirtSleeve >= lSleeve && shirtSleeve < xlSleeve){
-		uitkomst = "L";
-	  }
-	  else if(shirtWidth >= xlWidth && shirtWidth < xxlWidth && shirtLength >= xlLength && shirtLength < xxlLength && shirtSleeve >= xlSleeve && shirtSleeve < xxlSleeve){
-		uitkomst = "XL";
-	  }
-	  else if(shirtWidth >= xxlWidth && shirtWidth < xxxlWidth && shirtLength >= xxlLength && shirtLength < xxxlLength && shirtSleeve >= xxlSleeve && shirtSleeve < xxxlSleeve){
-		uitkomst = "2XL";
-	  }
-	  else if(shirtWidth >= xxxlWidth && shirtLength >= xxxlLength && shirtSleeve >= xxxlSleeve){
-		uitkomst = "3XL";
-	  }else{
-		uitkomst = "Geen maat"
-	  }
-	  
-	  console.log(uitkomst);
+		var uitkomst;
+		let shirtWidth = 23, shirtLength = 30, shirtSleeve = 8.88;
+		const sWidth = 18, sLength = 28, sSleeve = 8.13;
+		const mWidth = 20, mLength = 29, mSleeve = 8.38;
+		const lWidth = 22, lLength = 30, lSleeve = 8.63;
+		const xlWidth = 24, xlLength = 31, xlSleeve = 8.88;
+		const xxlWidth = 26, xxlLength = 33, xxlSleeve = 9.63;
+		const xxxlWidth = 28, xxxlLength = 34, xxxlSleeve = 10.13;
+
+		if (shirtWidth >= sWidth && shirtWidth < mWidth && shirtLength >= sLength && shirtLength < mLength && shirtSleeve >= sSleeve && shirtSleeve < mSleeve) {
+			uitkomst = "S";
+		} else if (shirtWidth >= mWidth && shirtWidth < lWidth && shirtLength >= mLength && shirtLength < lLength && shirtSleeve >= mSleeve && shirtSleeve < lSleeve) {
+			uitkomst = "M";
+		} else if (shirtWidth >= lWidth && shirtWidth < xlWidth && shirtLength >= lLength && shirtLength < xlLength && shirtSleeve >= lSleeve && shirtSleeve < xlSleeve) {
+			uitkomst = "L";
+		} else if (shirtWidth >= xlWidth && shirtWidth < xxlWidth && shirtLength >= xlLength && shirtLength < xxlLength && shirtSleeve >= xlSleeve && shirtSleeve < xxlSleeve) {
+			uitkomst = "XL";
+		} else if (shirtWidth >= xxlWidth && shirtWidth < xxxlWidth && shirtLength >= xxlLength && shirtLength < xxxlLength && shirtSleeve >= xxlSleeve && shirtSleeve < xxxlSleeve) {
+			uitkomst = "2XL";
+		} else if (shirtWidth >= xxxlWidth && shirtLength >= xxxlLength && shirtSleeve >= xxxlSleeve) {
+			uitkomst = "3XL";
+		} else {
+			uitkomst = "Geen maat"
+		}
+
+		console.log(uitkomst);
 	</script>
 </head>
 <body>

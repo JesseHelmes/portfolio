@@ -1,22 +1,22 @@
-	<template>
-		<div>
-https://github.com/ronanguilloux/php-gpio
-php raspberry json led gpio
-			temperature: {{temp.celsius}} °C
-			CPU: {{temp_cpu.celsius}} °C
+<template>
+	<div>
+		https://github.com/ronanguilloux/php-gpio
+		php raspberry json led gpio
+		temperature: {{temp.celsius}} °C
+		CPU: {{temp_cpu.celsius}} °C
 
-			<!-- temperature list -->
-			<!--<table>
-				<tr> <th>temperature</th> <th>tijd</th> <th>id</th> </tr>
-				<tr v-for="temp in temperaturen">
-					<td>{{temp.celsius}}</td>
-					<td>{{temp.tijd}}</td>
-					<td>{{temp.id}}</td>
-				</tr>
-			</<table>-->
+		<!-- temperature list -->
+		<!--<table>
+			<tr> <th>temperature</th> <th>tijd</th> <th>id</th> </tr>
+			<tr v-for="temp in temperaturen">
+				<td>{{temp.celsius}}</td>
+				<td>{{temp.tijd}}</td>
+				<td>{{temp.id}}</td>
+			</tr>
+		</<table>-->
 
-		</div>
-	</template>
+	</div>
+</template>
 
 <script>
 	export default {
@@ -28,7 +28,7 @@ php raspberry json led gpio
 				temperaturen: []
 			};
 		},
-		mounted(){
+		mounted() {
 			/*this.getTemperature();
 			this.getTemperatureCPU();
 			this.getTemperatureList();*/
@@ -54,20 +54,21 @@ php raspberry json led gpio
 					.catch(error => {});
 			},*/
 
-			setData(api, data){
+			setData(api, data) {
 				axios.get('/api/' + api)
 					.then(response => data = response.data)
-					.catch(error => {});
+					.catch(error => {
+					});
 			}
 		},
-		computed: {
-			
-		},
+		computed: {},
 		ready: {
-		//https://stackoverflow.com/questions/36572540/vue-js-auto-reload-refresh-data-with-timer
-		//https://laracasts.com/discuss/channels/vue/how-to-periodically-poll-a-back-end-api-using-vuejs
-			setInterval(this.getData('temperature', this.temp), 30000);
-			setInterval(this.getData('temperature', this.temp_cpu), 30000);
-		}
+			//https://stackoverflow.com/questions/36572540/vue-js-auto-reload-refresh-data-with-timer
+			//https://laracasts.com/discuss/channels/vue/how-to-periodically-poll-a-back-end-api-using-vuejs
+			setInterval(this.getData('temperature', this.temp), 30000
+	)
+	;
+	setInterval(this.getData('temperature', this.temp_cpu), 30000);
+	}
 	}
 </script>

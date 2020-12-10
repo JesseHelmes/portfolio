@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
-      var getal1 = parseFloat(prompt("voer eerste getal in", '1').replace(",", "."));
-      var getal2 = parseFloat(prompt("voer tweede getal in", '2').replace(",", "."));
-      var groter = getal1 > getal2,
-      kleiner = getal1 < getal2,
-      gelijk = getal1 == getal2;
-      var uitkomst;
-      var troost = "het waren geen getallen dus je krijgt een troost cookie *gives you cookie*";
-      if(groter){
-        uitkomst = getal1 + " is groter dan " + getal2;
-      }
-      else if(kleiner){
-        uitkomst = getal1 + " is kleiner dan " + getal2;
-      }
-      else if(gelijk){
-        uitkomst = getal1 + " is gelijk aan " + getal2;
-      }
-      if(uitkomst == undefined){
-        uitkomst = troost;
-      }
-    </script>
+	<script>
+		var getal1 = parseFloat(prompt("voer eerste getal in", '1').replace(",", "."));
+		var getal2 = parseFloat(prompt("voer tweede getal in", '2').replace(",", "."));
+		var groter = getal1 > getal2,
+			kleiner = getal1 < getal2,
+			gelijk = getal1 == getal2;
+		var uitkomst;
+		var troost = "het waren geen getallen dus je krijgt een troost cookie *gives you cookie*";
+		if (groter) {
+			uitkomst = getal1 + " is groter dan " + getal2;
+		} else if (kleiner) {
+			uitkomst = getal1 + " is kleiner dan " + getal2;
+		} else if (gelijk) {
+			uitkomst = getal1 + " is gelijk aan " + getal2;
+		}
+		if (uitkomst == undefined) {
+			uitkomst = troost;
+		}
+	</script>
 </head>
 <body>
-  <h1>Getallen vergelijken</h1>
-  <p id="input"></p>
-  <hr>
+<h1>Getallen vergelijken</h1>
+<p id="input"></p>
+<hr>
 <p id="uitkomst">uitkomst</p>
 <script>
-  document.getElementById('input').innerHTML = "De getallen die u invoerde waren " + getal1 + " en " + getal2;
-  document.getElementById('uitkomst').innerHTML = uitkomst;
+	document.getElementById('input').innerHTML = "De getallen die u invoerde waren " + getal1 + " en " + getal2;
+	document.getElementById('uitkomst').innerHTML = uitkomst;
 </script>
 </body>
 </html>

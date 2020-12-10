@@ -1,9 +1,9 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
 	const pokedexContainer = document.querySelector('#pokedex-container');
 	const regions = document.querySelector('#regions');
 	const pokedexPokemonContainer = document.querySelector('#pokedex-pokemon-container');
-	
+
 	const logo = document.querySelector('#logo');
 
 	const baseApi = "https://pokeapi.co/api/v2/";
@@ -40,8 +40,8 @@ $(document).ready(function(){
 	https://www.youtube.com/watch?v=XehSJF85F38
 	*/
 
-   $(document).ready(function(){
-	   //maakt de region menu aan
+	$(document).ready(function () {
+		//maakt de region menu aan
 		$.ajax({
 			url: baseApi + 'region'
 		}).done(setRegions);
@@ -56,20 +56,20 @@ $(document).ready(function(){
 		}).done(setMaxPokemonId);
 
 		//getPokemonDetails(153);
-   });
+	});
 
-   function setRegions(data){
+	function setRegions(data) {
 		console.log('the Regions request has finished!');
-		for(var i = 0; i < data.count; i++){
-			regions.innerHTML += "<li><a href='#'>" + data.results[i].name +"</a></li>";
+		for (var i = 0; i < data.count; i++) {
+			regions.innerHTML += "<li><a href='#'>" + data.results[i].name + "</a></li>";
 		}
 	}
 
-	function setMaxPokemonId(data){
+	function setMaxPokemonId(data) {
 		lastPokémonId = data.count;
 	}
 
-	$(regions).on('click', 'li a', function(e){
+	$(regions).on('click', 'li a', function (e) {
 		e.preventDefault();
 		pokedexContainer.innerHTML = '';
 		searchedForText = $(this).first().parent().text().toLowerCase();
@@ -81,9 +81,9 @@ $(document).ready(function(){
 
 	//dit is traag
 	//laad alle pokémons van de region
-	function handleRegion(data){
+	function handleRegion(data) {
 		count = data.pokedexes.length;
-		for(var i = 0; i < count; i++){
+		for (var i = 0; i < count; i++) {
 			$.ajax({
 				url: data.pokedexes[i].url
 			}).done(getRegionPokemons);
@@ -106,10 +106,10 @@ $(document).ready(function(){
 	}
 
 	//probeerde duplicaties te verkomen
-	function pokedexFill(data){
+	function pokedexFill(data) {
 		console.log(data);
 		count = data.pokemon_entries.length;
-		for(var i = 0; i < count; i++){
+		for (var i = 0; i < count; i++) {
 			pokedexData.push(data.pokemon_entries[i]);
 		}
 		console.log(pokedexData);
@@ -118,13 +118,13 @@ $(document).ready(function(){
 	}
 
 	// Defining function to get unique values from an array
-	function getUnique(array){
+	function getUnique(array) {
 		var uniqueArray = [];
 		//console.log(array);
 
 		// Loop through array values
-		for(var value of array){
-			if(uniqueArray.indexOf(value.pokemon_species) === -1){
+		for (var value of array) {
+			if (uniqueArray.indexOf(value.pokemon_species) === -1) {
 				uniqueArray.push(value);
 			}
 		}
@@ -144,22 +144,22 @@ $(document).ready(function(){
 		}
 	}*/
 
-	function getRegionPokemons(data){
+	function getRegionPokemons(data) {
 		//console.log(data);
 		count = data.pokemon_entries.length;
-		for(var i = 0; i < count; i++){
+		for (var i = 0; i < count; i++) {
 			//hoe verkom ik dat je dubbel pokemons krijgt voor een region?
 			pokemon = data.pokemon_entries[i].pokemon_species;
 			pokemon_id = pokemon.url.replace(baseApi + "pokemon-species/", "").replace("/", "");
 
-			pokedexContainer.innerHTML += "<div id='region-pokemon' pokemon-id='"+pokemon_id+"'>"+
-			"<a href='#'><img src='"+ getPokemonFrontImage(pokemon_id) +"'>"+
-			"</a><p>"+pokemon_id+". "+pokemon.name+"</p></div>";
+			pokedexContainer.innerHTML += "<div id='region-pokemon' pokemon-id='" + pokemon_id + "'>" +
+				"<a href='#'><img src='" + getPokemonFrontImage(pokemon_id) + "'>" +
+				"</a><p>" + pokemon_id + ". " + pokemon.name + "</p></div>";
 		}
 	}
 
 	//region menu click event
-	$(pokedexContainer).on('click', '#region-pokemon a', function(e){
+	$(pokedexContainer).on('click', '#region-pokemon a', function (e) {
 		e.preventDefault();
 		pokemon_id = $(this).parent().attr('pokemon-id');
 		$('#lightbox').show();
@@ -168,14 +168,14 @@ $(document).ready(function(){
 	});
 
 	//volgende vorige navigatie in pokemon details
-	$(pokedexPokemonContainer).on('click', '#navigator a', function(e){
+	$(pokedexPokemonContainer).on('click', '#navigator a', function (e) {
 		e.preventDefault();
 		pokemon_id = $(this).attr('pokemon-id');
 		getPokemonDetails(pokemon_id);
 	});
 
 	//dit laad alle pokémon details van een pokémon
-	function getPokemonDetails(pokemon_id){
+	function getPokemonDetails(pokemon_id) {
 		$.ajax({
 			url: baseApi + 'pokemon/' + pokemon_id
 		}).done(getPokemonInfo);
@@ -185,28 +185,28 @@ $(document).ready(function(){
 		}).done(getPokemonExtraInfo);
 	}
 
-	function getPokemonInfo(data){
+	function getPokemonInfo(data) {
 		var types = "", abilities = "", base_stats = "";
 
 		//previous
-		if(data.id > 1){
+		if (data.id > 1) {
 			$('#previous-pokemon a').attr("pokemon-id", data.id - 1);
 			$('#previous-pokemon a img').attr("src", getPokemonFrontImage(data.id - 1));
-			$('#previous-pokemon p').text("#" + (data.id - 1) );
+			$('#previous-pokemon p').text("#" + (data.id - 1));
 			$('#previous-pokemon').show();
-		}else{
-			 //hide als er geen vorige is
+		} else {
+			//hide als er geen vorige is
 			$('#previous-pokemon').hide();
 		}
 
 		//next
-		if(data.id < lastPokémonId){
-		$('#next-pokemon a').attr("pokemon-id", data.id + 1);
-		$('#next-pokemon a img').attr("src", getPokemonFrontImage(data.id + 1));
-		$('#next-pokemon p').text("#" + (data.id + 1) );
-		$('#next-pokemon').show();
-		}else{
-			 //hide als er geen volgende is
+		if (data.id < lastPokémonId) {
+			$('#next-pokemon a').attr("pokemon-id", data.id + 1);
+			$('#next-pokemon a img').attr("src", getPokemonFrontImage(data.id + 1));
+			$('#next-pokemon p').text("#" + (data.id + 1));
+			$('#next-pokemon').show();
+		} else {
+			//hide als er geen volgende is
 			$('#next-pokemon').hide();
 		}
 
@@ -216,25 +216,25 @@ $(document).ready(function(){
 		$('.pokémon-image').attr("src", getPokemonFrontImage(data.id));
 
 		//types
-		for(var i = 0; i < data.types.length; i++){
-			types += "<p class='pokémon-type "+data.types[i].type.name+"'>" + data.types[i].type.name + "</p>";
+		for (var i = 0; i < data.types.length; i++) {
+			types += "<p class='pokémon-type " + data.types[i].type.name + "'>" + data.types[i].type.name + "</p>";
 		}
 		$('.pokémon-types').html(types);
 
 		//abilities
-		for(var i = 0; i < data.abilities.length; i++){
+		for (var i = 0; i < data.abilities.length; i++) {
 			abilities += "<p>" + data.abilities[i].ability.name + "</p>";
 			//als het een hidden ablity is zorgt dit er voor dat het aangegeven wordt
-			if(data.abilities[i].is_hidden){
+			if (data.abilities[i].is_hidden) {
 				abilities += "<p id='hidden-abilty'>(Hidden Abilty)</p>";
 			}
 		}
 		$('.pokémon-abilities').html(abilities);
 
 		//stats
-		for(var i = 0; i < data.stats.length; i++){
+		for (var i = 0; i < data.stats.length; i++) {
 			stats = "";
-			switch(data.stats[i].stat.name){
+			switch (data.stats[i].stat.name) {
 				case "attack":
 					stats = "atk";
 					break;
@@ -251,17 +251,17 @@ $(document).ready(function(){
 					stats = data.stats[i].stat.name;
 					break;
 			}
-			base_stats += "<div class='"+ data.stats[i].stat.name +"' id='pokemon-details-Stats'><p>" + data.stats[i].base_stat + "</p><p>" + stats + "</p></div>";
+			base_stats += "<div class='" + data.stats[i].stat.name + "' id='pokemon-details-Stats'><p>" + data.stats[i].base_stat + "</p><p>" + stats + "</p></div>";
 		}
 		$('.pokémon-stats').html(base_stats);
 	}
 
-	function getPokemonExtraInfo(data){
+	function getPokemonExtraInfo(data) {
 		$('.pokémon-specie').text(data.genera[7].genus);
 	}
 
 	//easter eggs
-	$(logo).on('contextmenu', function(){
+	$(logo).on('contextmenu', function () {
 		$('#lightbox').show();
 		$(pokedexPokemonContainer).show();
 		id = Math.floor(Math.random() * lastPokémonId) + 1;
@@ -270,7 +270,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$(pokedexPokemonContainer).on('click', '#navigator #title', function(){
+	$(pokedexPokemonContainer).on('click', '#navigator #title', function () {
 		id = Math.floor(Math.random() * lastPokémonId) + 1;
 		getPokemonDetails(id);
 	});
@@ -278,68 +278,69 @@ $(document).ready(function(){
 	//eind easter eggs
 
 	//verander afbeelding naar shiny en terug
-	$(pokedexPokemonContainer).on('click', '.pokémon-image', function(){
+	$(pokedexPokemonContainer).on('click', '.pokémon-image', function () {
 		pokemon_id = $('.pokémon-number').html().replace('#', '');
 		isShiny = $(this).attr("src").includes('shiny');
 		isBack = $(this).attr("src").includes('back');
 
-		if(!isBack){
-			if(!isShiny){
-			$(this).attr("src", getShinyPokemonFrontImage(pokemon_id));
-			}else{
+		if (!isBack) {
+			if (!isShiny) {
+				$(this).attr("src", getShinyPokemonFrontImage(pokemon_id));
+			} else {
 				$(this).attr("src", getPokemonFrontImage(pokemon_id));
 			}
-		}else{
-			if(!isShiny){
+		} else {
+			if (!isShiny) {
 				$(this).attr("src", getShinyPokemonBackImage(pokemon_id));
-				}else{
-					$(this).attr("src", getPokemonBackImage(pokemon_id));
-				}
+			} else {
+				$(this).attr("src", getPokemonBackImage(pokemon_id));
+			}
 		}
 	});
-	
+
 	//recht klik om pokemon te draaien
-	$(pokedexPokemonContainer).on('contextmenu', '.pokémon-image', function(){
+	$(pokedexPokemonContainer).on('contextmenu', '.pokémon-image', function () {
 		pokemon_id = $('.pokémon-number').html().replace('#', '');
 		isShiny = $(this).attr("src").includes('shiny');
 		isBack = $(this).attr("src").includes('back');
 
-		if(isBack){
-			if(isShiny){
-			$(this).attr("src", getShinyPokemonFrontImage(pokemon_id));
-			}else{
+		if (isBack) {
+			if (isShiny) {
+				$(this).attr("src", getShinyPokemonFrontImage(pokemon_id));
+			} else {
 				$(this).attr("src", getPokemonFrontImage(pokemon_id));
 			}
-		}else{
-			if(isShiny){
+		} else {
+			if (isShiny) {
 				$(this).attr("src", getShinyPokemonBackImage(pokemon_id));
-				}else{
-					$(this).attr("src", getPokemonBackImage(pokemon_id));
-				}
+			} else {
+				$(this).attr("src", getPokemonBackImage(pokemon_id));
+			}
 		}
 		return false;
 	});
 
 	//afbeeldingen Begin
-	function getPokemonFrontImage(pokemon_id){
-		return baseImageUrl +pokemon_id+".png";//?raw=true"
+	function getPokemonFrontImage(pokemon_id) {
+		return baseImageUrl + pokemon_id + ".png";//?raw=true"
 	}
 
-	function getPokemonBackImage(pokemon_id){
-		return baseImageUrl + "back/" +pokemon_id+".png";
+	function getPokemonBackImage(pokemon_id) {
+		return baseImageUrl + "back/" + pokemon_id + ".png";
 	}
 
-	function getShinyPokemonFrontImage(pokemon_id){
-		return baseImageUrl + "shiny/"+pokemon_id+".png";
+	function getShinyPokemonFrontImage(pokemon_id) {
+		return baseImageUrl + "shiny/" + pokemon_id + ".png";
 	}
 
-	function getShinyPokemonBackImage(pokemon_id){
-		return baseImageUrl + "back/shiny/"+pokemon_id+".png";
+	function getShinyPokemonBackImage(pokemon_id) {
+		return baseImageUrl + "back/shiny/" + pokemon_id + ".png";
 	}
+
 	//afbeeldingen Einde
 
 	//dit zorgt er voor dat de pokémon details word verborgen
-	$('#lightbox').on('click', function(e){
+	$('#lightbox').on('click', function (e) {
 		$(this).hide();
 		$(pokedexPokemonContainer).hide();
 	});

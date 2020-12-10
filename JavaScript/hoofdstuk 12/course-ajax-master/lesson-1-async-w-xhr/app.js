@@ -10,24 +10,23 @@
 		searchedForText = searchField.value;
 
 		const asyncRequestObject = new XMLHttpRequest();
-		asyncRequestObject.open('GET', 'https://api.unsplash.com/search/photos?query='+searchedForText);
+		asyncRequestObject.open('GET', 'https://api.unsplash.com/search/photos?query=' + searchedForText);
 		asyncRequestObject.setRequestHeader('Authorization', 'Client-ID 6GS0H6pHse0-jMEcMTN_MvoxsaMwM45Xo4NTJGkxIWo');
 		asyncRequestObject.onload = handleSuccess;
 		asyncRequestObject.onerror = handleError;
 		asyncRequestObject.send();
 	});
 
-	
 
-	function handleSuccess(){
+	function handleSuccess() {
 		const data = JSON.parse(this.responseText)
 		console.log(data.results[0]);
-		for(var i = 0; i < 10; i++){
-			responseContainer.innerHTML += "<img src='" + data.results[i].urls.regular +"'>"
+		for (var i = 0; i < 10; i++) {
+			responseContainer.innerHTML += "<img src='" + data.results[i].urls.regular + "'>"
 		}
 	}
 
-	function handleError(){
+	function handleError() {
 		console.log('An error occured!');
 	}
 })();

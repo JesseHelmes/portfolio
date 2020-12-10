@@ -3,11 +3,12 @@
 <head>
 	<script>
 		var index = 1;
-		function sendText(){
+
+		function sendText() {
 			//1 maak new element
 			var newElement = document.createElement('h' + index);
 			index++;
-			if(index > 6){
+			if (index > 6) {
 				index = 1;
 			}
 
@@ -31,7 +32,7 @@
 <button id="pressMe">press me please</button>
 <div id="divResult"></div>
 <script>
-	document.getElementById('pressMe').onclick = function(){
+	document.getElementById('pressMe').onclick = function () {
 		sendText();
 	}
 </script>

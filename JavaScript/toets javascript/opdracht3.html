@@ -3,64 +3,65 @@
 <head>
 </head>
 <body>
-  <h1 id="title">Bekijk</h1>
-  <input id="inputMaand" type="number"><button id="pressME">Bekijk Horoscoop</button>
-  <p id="horoscoop">Jouw Horoscoop is: 
-  </p>
+<h1 id="title">Bekijk</h1>
+<input id="inputMaand" type="number">
+<button id="pressME">Bekijk Horoscoop</button>
+<p id="horoscoop">Jouw Horoscoop is:
+</p>
 
-  <script>
-	document.getElementById('pressME').onclick = function(){
-	  showHoroscoop();
+<script>
+	document.getElementById('pressME').onclick = function () {
+		showHoroscoop();
 	};
 
-	function showHoroscoop(){
-	  var horoschoop = "";
-	  var maandNumber = document.getElementById('inputMaand').value;
-	  console.log(maandNumber);
+	function showHoroscoop() {
+		var horoschoop = "";
+		var maandNumber = document.getElementById('inputMaand').value;
+		console.log(maandNumber);
 
-	  switch(maandNumber){
-		case '1':
-			horoschoop = "Steenbok";
-		  break;
-		case '2':
-			horoschoop = "Waterman";
-		  break;
-		case '3':
-			horoschoop = "Vissen";
-		  break;
-		case '4':
-			horoschoop = "Ram";
-		  break;
-		case '5':
-			horoschoop = "Stier";
-		  break;
-		case '6':
-			horoschoop = "Tweelingen";
-		  break;
-		case '7':
-			horoschoop = "Kreeft";
-		  break;
-		case '8':
-			horoschoop = "Leeuw";
-		  break;
-		case '9':
-			horoschoop = "Maagd";
-		  break;
-		case '10':
-			horoschoop = "Weegschaal";
-		  break;
-		case '11':
-			horoschoop = "Schorpioen";
-		  break;
-		case '12':
-			horoschoop = "Boogschutter";
-		  break;
-		default:
-			horoschoop = "Geen geldige maand ingevuld!";
-		  break;
-	  }
+		switch (maandNumber) {
+			case '1':
+				horoschoop = "Steenbok";
+				break;
+			case '2':
+				horoschoop = "Waterman";
+				break;
+			case '3':
+				horoschoop = "Vissen";
+				break;
+			case '4':
+				horoschoop = "Ram";
+				break;
+			case '5':
+				horoschoop = "Stier";
+				break;
+			case '6':
+				horoschoop = "Tweelingen";
+				break;
+			case '7':
+				horoschoop = "Kreeft";
+				break;
+			case '8':
+				horoschoop = "Leeuw";
+				break;
+			case '9':
+				horoschoop = "Maagd";
+				break;
+			case '10':
+				horoschoop = "Weegschaal";
+				break;
+			case '11':
+				horoschoop = "Schorpioen";
+				break;
+			case '12':
+				horoschoop = "Boogschutter";
+				break;
+			default:
+				horoschoop = "Geen geldige maand ingevuld!";
+				break;
+		}
 
-	  document.getElementById('horoscoop').innerHTML = "Jouw Horoscoop is: " + horoschoop;
+		document.getElementById('horoscoop').innerHTML = "Jouw Horoscoop is: " + horoschoop;
 	}
 </script>
 </body>

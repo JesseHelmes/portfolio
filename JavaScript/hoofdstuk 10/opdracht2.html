@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- local -->
-    <script src="../jquery-3.5.1.min.js"></script>
-    <!-- CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-      $(document).ready(function(){
-          $('#clickME').one('click', function(){
-            var input = $('#input').val();
-            console.log('Uw naam is: ' + input)
-            $('h1').append(input);
-          });
-        });
-  </script>
+	<!-- local -->
+	<script src="../jquery-3.5.1.min.js"></script>
+	<!-- CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#clickME').one('click', function () {
+				var input = $('#input').val();
+				console.log('Uw naam is: ' + input)
+				$('h1').append(input);
+			});
+		});
+	</script>
 </head>
 <body>
-  <p>Vul je naam in: <input id="input" type="text"></p>
-  <button id="clickME">CLICK ME</button>
-  <h1>Uw naam is: </h1>
+<p>Vul je naam in: <input id="input" type="text"></p>
+<button id="clickME">CLICK ME</button>
+<h1>Uw naam is: </h1>
 </body>
 </html>
