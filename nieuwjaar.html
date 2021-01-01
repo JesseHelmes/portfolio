@@ -10,7 +10,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
 		$(document).ready(function () {
-			var jaar = new Date().getFullYear();
+			var jaar = new Date().getFullYear();//"2020"
+			var locatie = "nl-NL";
 
 			var bericht = 'Veel geluk op ';
 
@@ -19,11 +20,11 @@
 			}
 
 			function getDayName(datum){
-				return datum.toLocaleDateString("nl-NL", { weekday: 'long' });
+				return datum.toLocaleDateString(locatie, { weekday: 'long' });
 			}
 
 			function getMonthName(datum){
-				return datum.toLocaleDateString("nl-NL", { month: 'long' });
+				return datum.toLocaleDateString(locatie, { month: 'long' });
 			}
 
 			var maanddagen = [];
