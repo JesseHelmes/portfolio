@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	body{
+		background:black;
+		color:white;
+	}
+</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			var jaar = new Date().getFullYear();
+
+			var bericht = 'Veel geluk op ';
+
+			function daysInMonth(month, year){
+				return new Date(year, month, 0).getDate();
+			}
+
+			function getDayName(datum){
+				return datum.toLocaleDateString("nl-NL", { weekday: 'long' });
+			}
+
+			function getMonthName(datum){
+				return datum.toLocaleDateString("nl-NL", { month: 'long' });
+			}
+
+			var maanddagen = [];
+			var maandnaam = [];
+			for(var i = 1; i <= 12; i++) {
+				maanddagen[i -1] = daysInMonth(i, jaar);
+				maandnaam[i - 1] = getMonthName(new Date(jaar,i-1,1));
+			}
+
+			var i = 0;
+			var Dag = 1;
+			var msg = "";
+
+
+			for(var m = 0; m <= 11; m++)
+			{
+				for(var d = 1; d <= maanddagen[i]; d++)
+				{
+				console.log(new Date(jaar,m + 1,d));
+					msg += bericht + getDayName(new Date(jaar,m,d)) + " " + d + " " + maandnaam[m] + " " + jaar + "!" + '<br>';
+					Dag++;
+					if (Dag == 7)
+					{
+						Dag = 0;
+						msg += '<br>';
+					}
+
+				}
+				msg += '<br><br>';
+				i++;
+
+			}
+			document.body.innerHTML = msg;
+		});
+	</script>
+</head>
+<body>
+
+</body>
+</html>
