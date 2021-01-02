@@ -9,54 +9,60 @@
 </style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
-		$(document).ready(function () {
-			var jaar = new Date().getFullYear();//"2020"
-			var locatie = "nl-NL";
+		$(document).ready(function(){
+			//happy new year! for each day
 
-			var bericht = 'Veel geluk op ';
+			var lang = "nl-NL";
+			var msg = 'Veel geluk op ';//Good luck on
+			var year = new Date().getFullYear();//"2020"
+
 
 			function daysInMonth(month, year){
 				return new Date(year, month, 0).getDate();
 			}
 
-			function getDayName(datum){
-				return datum.toLocaleDateString(locatie, { weekday: 'long' });
+			function getDayName(dateInput){
+				return dateInput.toLocaleDateString(lang, { weekday: 'long' });
 			}
 
-			function getMonthName(datum){
-				return datum.toLocaleDateString(locatie, { month: 'long' });
+			function getMonthName(dateInput){
+				return dateInput.toLocaleDateString(lang, { month: 'long' });
 			}
 
-			var maanddagen = [];
-			var maandnaam = [];
+			var monthDays = [], monthNames = [];
+
 			for(var i = 1; i <= 12; i++) {
-				maanddagen[i -1] = daysInMonth(i, jaar);
-				maandnaam[i - 1] = getMonthName(new Date(jaar,i-1,1));
+				//fills array with days in each month
+				monthDays[i -1] = daysInMonth(i, year);
+				//fills array with the name of each month
+				monthNames[i - 1] = getMonthName(new Date(year, i-1, 1));
 			}
 
-			var i = 0;
-			var Dag = 1;
-			var msg = "";
 
+			var i = 0, day = 1, output = "";
 
+			//loops trough each month of the year
 			for(var m = 0; m <= 11; m++)
 			{
-				for(var d = 1; d <= maanddagen[i]; d++)
+				//loops trough each day of the month
+				for(var d = 1; d <= monthDays[i]; d++)
 				{
-					msg += bericht + getDayName(new Date(jaar,m,d)) + " " + d + " " + maandnaam[m] + " " + jaar + "!" + '<br>';
-					Dag++;
-					if (Dag == 7)
+					output += msg + getDayName(new Date(year, m, d)) + " " + d + " " + monthNames[m] + " " + year + "!" + '<br>';
+
+					//puts a enter between each week
+					day++;
+					if (day == 7)
 					{
-						Dag = 0;
-						msg += '<br>';
+						day = 0;
+						output += '<br>';
 					}
 
 				}
-				msg += '<br><br>';
+				output += '<br><br>';
 				i++;
 
 			}
-			document.body.innerHTML = msg;
+			document.body.innerHTML = output;
 		});
 	</script>
 </head>
