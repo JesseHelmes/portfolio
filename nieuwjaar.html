@@ -31,11 +31,11 @@
 
 			var monthDays = [], monthNames = [];
 
-			for(var i = 1; i <= 12; i++) {
+			for(var i = 0; i < 12; i++) {
 				//fills array with days in each month
-				monthDays[i -1] = daysInMonth(i, year);
+				monthDays[i] = daysInMonth(i+1, year);
 				//fills array with the name of each month
-				monthNames[i - 1] = getMonthName(new Date(year, i-1, 1));
+				monthNames[i] = getMonthName(new Date(year, i, 1));
 			}
 
 
