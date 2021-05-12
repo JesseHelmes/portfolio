@@ -1,0 +1,108 @@
+<p>flower-form works!</p>
+
+<form [formGroup]="form" (ngSubmit)="formAction(form.value)">
+	<div>
+		<div class="row">
+			<div class="form-group col-6">
+				<label for="name">Name *</label>
+				<input
+					type="text"
+					class="form-control"
+					id="name"
+					placeholder="name *"
+					formControlName="name"
+					required
+				/>
+			</div>
+
+			<div class="form-group col-6">
+				<label for="secondName">Second name</label>
+				<input
+					type="text"
+					class="form-control"
+					id="secondName"
+					placeholder="second name"
+					formControlName="secondName"
+				/>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="image">Image path</label>
+			<input
+				type="text"
+				class="form-control"
+				id="image"
+				placeholder="image path"
+				formControlName="image"
+			/>
+			<img
+				*ngIf="form.get('image').value"
+				src="{{ form.get('image').value }}"
+				alt="No image can be found."
+			/>
+		</div>
+
+		<div class="form-group">
+			<label for="description"
+				>Description
+				<small>
+					characters left:
+					{{ showDescriptionMaxCharsLeft() }}
+				</small>
+			</label>
+			<textarea
+				class="form-control"
+				id="description"
+				placeholder="description"
+				formControlName="description"
+				rows="4"
+				cols="50"
+				maxlength="{{ descriptionMaxChars }}"
+			></textarea>
+		</div>
+
+		<div class="row">
+			<div class="form-group col-auto">
+				<label for="price">Price in bits *</label>
+				<input
+					type="number"
+					min="1"
+					class="form-control"
+					id="price"
+					placeholder="price in bits *"
+					formControlName="price"
+					required
+				/>
+			</div>
+
+			<div class="form-group col-auto">
+				<label for="blood">Price in blood</label>
+				<input
+					type="number"
+					min="1"
+					class="form-control"
+					id="blood"
+					placeholder="price in blood"
+					formControlName="blood"
+				/>
+			</div>
+		</div>
+	</div>
+	<div>
+		<button
+			class="btn btn-primary mr-1"
+			[disabled]="form.invalid || form.pristine"
+		>
+			{{ buttonText }}
+		</button>
+		<button
+			*ngIf="flower && flower.id"
+			class="btn btn-danger"
+			type="button"
+			(click)="deleteFlower()"
+		>
+			DELETE FLOWER
+		</button>
+	</div>
+</form>

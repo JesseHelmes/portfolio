@@ -1,0 +1,40 @@
+<div class="container-md">
+	<p>login works!</p>
+	<form [formGroup]="form" (ngSubmit)="login(form.value)">
+		<div>
+			<div class="row">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input
+						type="text"
+						class="form-control"
+						id="name"
+						placeholder="name *"
+						formControlName="name"
+						autocomplete="username"
+						required
+					/>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input
+						type="password"
+						class="form-control"
+						id="password"
+						placeholder="password"
+						formControlName="password"
+						autocomplete="current-password"
+						required
+					/>
+				</div>
+			</div>
+
+			<div class="row">
+				<button class="btn btn-primary">Login</button>
+			</div>
+		</div>
+	</form>
+</div>

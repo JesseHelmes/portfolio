@@ -1,0 +1,33 @@
+<div class="container-md">
+	<p>flowers works!</p>
+
+	<ng-container *ngIf="false">
+	<button *ngIf="this.offset > 0" class="btn btn-primary" (click)="prevPage()">PREV</button>
+	<button class="btn btn-primary" (click)="nextPage()">NEXT</button>
+</ng-container>
+
+	<form
+		[formGroup]="form"
+		(ngSubmit)="searchFlower(form.get('search').value)"
+	>
+		<div class="input-group">
+			<input
+				placeholder="search flower.."
+				type="text"
+				formControlName="search"
+			/>
+			<button class="btn btn-primary">SEARCH</button>
+		</div>
+	</form>
+
+	<div class="card-body">
+		<div class="row">
+			<div
+				class="col-md-3 col-sm-6"
+				*ngFor="let flower of flowers | async"
+			>
+				<flower-card [flower]="flower"></flower-card>
+			</div>
+		</div>
+	</div>
+</div>

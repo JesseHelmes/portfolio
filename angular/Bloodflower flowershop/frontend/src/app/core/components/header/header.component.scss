@@ -1,0 +1,17 @@
+@import "src/app/shared/variables";
+.navbar-brand,
+.username {
+	color: $blood;
+
+	&:hover,
+	&:visited {
+		color: $blood;
+	}
+}
+
+.brand {
+	width: 30px;
+	height: 30px;
+	background-color: white;
+	border-radius: 1.6px;
+}

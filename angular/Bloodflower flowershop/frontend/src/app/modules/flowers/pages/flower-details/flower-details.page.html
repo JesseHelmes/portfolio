@@ -1,0 +1,28 @@
+<div class="container-md">
+	<p>flower details works!</p>
+
+	<div class="card-body">
+		<div class="row">
+			<div>
+				<img
+					class="flower-image"
+					src="{{flower.image}}"
+					alt="{{flower.name}}"
+				/>
+			</div>
+			<div>
+				<h4>{{flower.name}}</h4>
+
+				<p>{{flower.secondName ? ' aka' : ''}} {{flower.secondName}}</p>
+				<p class="text-break">
+					description:<br />{{ flower.description }}
+				</p>
+				<p>
+					price: BITS: {{flower.price}}
+					<br />
+					{{flower.blood ? 'BLOODBAGS: ' : ''}} {{flower.blood}}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

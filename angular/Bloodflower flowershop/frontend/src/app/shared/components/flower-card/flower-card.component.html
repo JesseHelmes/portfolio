@@ -1,0 +1,17 @@
+<div class="card">
+	<a routerLink="/flowers/{{ flower.id }}">
+		<img
+			class="card-img-top"
+			src="{{ flower.image }}"
+			alt="{{ flower.name }}"
+		/>
+	</a>
+	<div class="card-body">
+		<h4 class="card-title">hi {{ flower.name }}</h4>
+		<p>
+			{{ flower.price }} bits
+			<br />
+			{{ flower.blood }} {{ flower.blood ? "bloodbags" : "" }}
+		</p>
+	</div>
+</div>
