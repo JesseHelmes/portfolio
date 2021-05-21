@@ -12,7 +12,7 @@ frontend: https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angul
 backend:
 
 Backed ToDo:
-user entity hash password.
+user entity hash password (testen?..).
 
 Frontend ToDo:
 improve navbar.
@@ -25,3 +25,7 @@ Darkmode????
 flowers overview in admin mogelijkheid om te sorteren.
 pagination? voor flowers die klanten kunnen zien. ook tellen hoeveel het er zijn?
 https://stackoverflow.com/questions/3799193/mysql-data-best-way-to-implement-paging#answer-40146849
+blog met vertical timeline: begonnen in jaar xxxx, zwangerschaptest, new blood filly born, proposed(aanzoek), merriage
+
+image flower upload (afbeeldingen uploaden om ze te gebruiken als product afbeelding)
+https://docs.nestjs.com/techniques/file-upload

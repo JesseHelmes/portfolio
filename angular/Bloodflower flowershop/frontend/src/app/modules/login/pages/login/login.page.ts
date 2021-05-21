@@ -15,11 +15,11 @@ export class LoginPage implements OnInit {
 	public returnUrl: string;
 
 	constructor(
-		private fb: FormBuilder,
-		private authenticationService: AuthenticationService,
-		private route: ActivatedRoute,
-		private router: Router,
-		private notificationService: NotificationService
+		private readonly fb: FormBuilder,
+		private readonly authenticationService: AuthenticationService,
+		private readonly route: ActivatedRoute,
+		private readonly router: Router,
+		private readonly notificationService: NotificationService
 	) {
 		//redirect to home if alreaddy logged in
 		if (this.authenticationService.currentUserValue) {
@@ -49,7 +49,7 @@ export class LoginPage implements OnInit {
 		}
 
 		this.authenticationService.login(data.name, data.password).subscribe(
-			(data) => {
+			(success) => {
 				this.router
 					.navigate([this.returnUrl])
 					.then((success: boolean) => {
@@ -59,9 +59,9 @@ export class LoginPage implements OnInit {
 					});
 			},
 			(error) => {
-				console.log(error); //'Gebruikersnaam of wachtwoord is incorrect.'
+				console.log(error);
 				this.notificationService.displayDangerNotification(
-					`${error.message}`
+					`Gebruikersnaam of wachtwoord is incorrect. <br> ${error.message}`
 				);
 			}
 		);

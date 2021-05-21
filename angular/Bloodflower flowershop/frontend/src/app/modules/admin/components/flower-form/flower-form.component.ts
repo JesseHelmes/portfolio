@@ -36,10 +36,10 @@ export class FlowerFormComponent implements OnInit, OnChanges {
 	flowerAction: EventEmitter<FlowerRequest> = new EventEmitter<FlowerRequest>();
 
 	constructor(
-		private fb: FormBuilder,
-		private router: Router,
-		private flowerService: FlowerService,
-		private notificationService: NotificationService
+		private readonly fb: FormBuilder,
+		private readonly router: Router,
+		private readonly flowerService: FlowerService,
+		private readonly notificationService: NotificationService
 	) {}
 
 	ngOnChanges(changes: SimpleChanges): void {
@@ -75,18 +75,25 @@ export class FlowerFormComponent implements OnInit, OnChanges {
 	}
 
 	public deleteFlower() {
-		this.flowerService.deleteFlower(this.flower.id).subscribe(
-			(success) => {
-				console.log('aww.. the flower died!');
-				this.router.navigate(['/admin']);
-			},
-			(error) => {
-				//console.log('flower is still alive!');
-				this.notificationService.displayDangerNotification(
-					`flower is still alive!: ${error.message}`
-				);
-			}
+		const deleteConfirm = window.confirm(
+			`Are you sure that you want to 'root up' ${this.flower.name}${
+				this.flower.secondName ? ' aka ' + this.flower.secondName : ''
+			}??`
 		);
+
+		if (deleteConfirm)
+			this.flowerService.deleteFlower(this.flower.id).subscribe(
+				(success) => {
+					console.log('aww.. you killed the flower!');
+					this.router.navigate(['/admin']);
+				},
+				(error) => {
+					//console.log('flower is still alive!');
+					this.notificationService.displayDangerNotification(
+						`flower is still alive!: ${error.message}`
+					);
+				}
+			);
 	}
 
 	public showDescriptionMaxCharsLeft(): number {
