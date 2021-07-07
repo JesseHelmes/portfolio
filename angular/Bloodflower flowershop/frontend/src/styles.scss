@@ -5,6 +5,11 @@ footer {
 	background-color: $green;
 }
 
+/* https://stackoverflow.com/a/52522285 */
+router-outlet + * {
+	flex-grow: 1;
+}
+
 .btn {
 	text-transform: uppercase;
 }

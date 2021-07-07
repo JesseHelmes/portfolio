@@ -7,16 +7,21 @@ notification services. hash password.
 
 Informatie zoals Roles, Username en Access token worden in localStorage opgeslagen.
 
+Frontend: Angular, Bootstrap.
+Backend: NestJs.
+
 folder structuur gebruikt:
 frontend: https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7
 backend:
+
+Tips:
+css toepassen op router-outlet pages: https://stackoverflow.com/a/52522285
 
 Backed ToDo:
 user entity hash password (testen?..).
 
 Frontend ToDo:
 improve navbar.
-footer ook echt onderaan de pagina maken en niet wanneer er te weinig content is midden in de scherm tonen.
 layout verbeteren.
 
 extra:
