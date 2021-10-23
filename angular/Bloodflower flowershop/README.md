@@ -17,12 +17,15 @@ backend:
 Tips:
 css toepassen op router-outlet pages: https://stackoverflow.com/a/52522285
 
-Backed ToDo:
+Backend ToDo:
 user entity hash password (testen?..).
+User decorator maken? https://stackoverflow.com/a/54981245
 
 Frontend ToDo:
 improve navbar.
 layout verbeteren.
+add formly
+add tailwinds instead of bootstrap
 
 extra:
 export flowers en import flowers.
@@ -34,3 +37,4 @@ blog met vertical timeline: begonnen in jaar xxxx, zwangerschaptest, new blood f
 
 image flower upload (afbeeldingen uploaden om ze te gebruiken als product afbeelding)
 https://docs.nestjs.com/techniques/file-upload
+https://stackoverflow.com/questions/47936183/angular-file-upload
